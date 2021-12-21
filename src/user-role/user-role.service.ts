@@ -24,15 +24,14 @@ export class UserRoleService {
   }
 
   async update(id: string, userrole: UserRoleUpdateDto): Promise<UserRole> {
-    try {
-      const user = await this.userRoleRepository.findOne(id);
-      user.id = userrole.id;
-      user.roleName = userrole.roleName;
-      return await this.userRoleRepository.update(user);
-    } catch (error) {
-      console.log(error);
-      throw new NotFoundException(`Record cannot find by id ${id}`);
+    const { roleName } = userrole;
+    const user = await this.findOne(id);
+
+    if (roleName) {
+      user.roleName = roleName;
     }
+
+    return this.userRoleRepository.save(user);
   }
 
   findOne(id: string) {
