@@ -12,8 +12,6 @@ export class UserRoleService {
     private userRoleRepository: Repository<UserRole>,
   ) {}
 
-  // private permissions: number[] = [];
-
   async getAll(): Promise<UserRole[]> {
     return this.userRoleRepository.find();
   }
