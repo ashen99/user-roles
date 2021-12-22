@@ -5,9 +5,12 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class UserRole {
   @Field()
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: string;
   @Field()
   @Column()
   roleName: string;
+  @Field()
+  @Column("uuid", { array: true })
+  permissions: string;
 }

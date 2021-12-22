@@ -1,9 +1,10 @@
 import { Field, InputType } from '@nestjs/graphql';
+import { Column } from 'typeorm';
 
 @InputType()
 export class UserRoleCreateDto {
   @Field()
-  id: string;
-  @Field()
   roleName: string;
+  @Field()
+  permissions: string
 }
