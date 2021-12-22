@@ -26,4 +26,5 @@ input UserRoleCreateDto {
 input UserRoleUpdateDto {
   id: String!
   roleName: String!
+  permission: [String!]!
 }
