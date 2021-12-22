@@ -6,5 +6,5 @@ export class UserRoleCreateDto {
   @Field()
   roleName: string;
   @Field()
-  permissions: string
+  permissions: string[]
 }
