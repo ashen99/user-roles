@@ -6,6 +6,4 @@ export class UserRoleUpdateDto {
   id: string;
   @Field()
   roleName: string;
-  @Field()
-  permissions: string[]
 }

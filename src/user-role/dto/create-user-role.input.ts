@@ -5,6 +5,6 @@ import { Column } from 'typeorm';
 export class UserRoleCreateDto {
   @Field()
   roleName: string;
-  @Field()
-  permissions: string[]
+  @Field(() => [String])
+  permission: string[];
 }

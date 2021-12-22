@@ -5,7 +5,7 @@
 type UserRole {
   id: String!
   roleName: String!
-  permissions: String!
+  permission: [String!]!
 }
 
 type Query {
@@ -20,11 +20,10 @@ type Mutation {
 
 input UserRoleCreateDto {
   roleName: String!
-  permissions: String!
+  permission: [String!]!
 }
 
 input UserRoleUpdateDto {
   id: String!
   roleName: String!
-  permissions: String!
 }
